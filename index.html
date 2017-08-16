@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Open Data Platform</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link href="assets/css/one-page-wonder.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+
+</head>
+
+<body>  
+
+    <nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class=""><a href="index.html"> Home</a></li>
+          <li class=""><a href="#"> Features</a></li>
+           <li class=""><a href="#"> Open Data - Scorm Object Course</a></li>
+           <li class=""><a href="#"> Initiative</a></li>
+        <li class=""><a href="#"> Team</a></li>
+        <!-- <li><a href="IEAP.html"> Join</a></li> -->
+        <li><a href="About.html"> About</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#exampleModalLong"> Partners</a>
+        </li>
+        <li><a href="About.html"> Contact</a></li>
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+    <style>
+@import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
+html, body { background: #333 url("https://codepen.io/images/classy_fabric.png"); }
+
+.slides {
+    padding: 0;
+    padding-right:348px;
+    width: 1000px;
+    height: 420px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+}
+
+.slides * {
+    user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.slides input { display: none; }
+
+.slide-container { display: block; }
+
+.slide {
+    top: 0;
+    opacity: 0;
+    width: 1337px;
+    height: 700px;
+    display: block;
+    position: absolute;
+
+    transform: scale(0);
+
+    transition: all .7s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+}
+
+.nav label {
+    width: 200px;
+    height: 165%;
+    display: none;
+    position: absolute;
+
+	  opacity: 0;
+    z-index: 9;
+    cursor: pointer;
+
+    transition: opacity .2s;
+
+    color: #FFF;
+    font-size: 156pt;
+    text-align: center;
+    line-height: 380px;
+    font-family: "Varela Round", sans-serif;
+    background-color: rgba(255, 255, 255, .3);
+    text-shadow: 0px 0px 15px rgb(119, 119, 119);
+}
+
+.slide:hover + .nav label { opacity: 0.5; }
+
+.nav label:hover { opacity: 1; }
+
+.nav .next { right: 0; }
+
+input:checked + .slide-container  .slide {
+    opacity: 1;
+
+    transform: scale(1);
+
+    transition: opacity 1s ease-in-out;
+}
+
+input:checked + .slide-container .nav label { display: block; }
+
+.nav-dots {
+	width: 100%;
+	bottom: 9px;
+	height: 11px;
+	display: block;
+	position: absolute;
+	text-align: center;
+}
+
+.nav-dots .nav-dot {
+	top: -5px;
+	width: 11px;
+	height: 11px;
+	margin: 0 4px;
+	position: relative;
+	border-radius: 100%;
+	display: inline-block;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+
+.nav-dots .nav-dot:hover {
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+input#img-1:checked ~ .nav-dots label#img-dot-1,
+input#img-2:checked ~ .nav-dots label#img-dot-2,
+input#img-3:checked ~ .nav-dots label#img-dot-3,
+input#img-4:checked ~ .nav-dots label#img-dot-4,
+input#img-5:checked ~ .nav-dots label#img-dot-5,
+input#img-6:checked ~ .nav-dots label#img-dot-6 {
+	background: rgba(0, 0, 0, 0.8);
+}
+</style>
+
+    <!-- Modal -->
+    <div class="modal fade bd-example-modal-sm" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLongTitle">Please Login to access</h4>
+                </div>
+                <div class="modal-body">
+                    <form role="form" id="login" class="login-form fade-in-effect" action="dashboard.html">
+                        <div class="form-group">
+                            <label class="control-label" for="username">Username</label>
+                            <input type="text" class="form-control input-dark" name="username" id="username" autocomplete="off" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label" for="passwd">Password</label>
+                            <input type="password" class="form-control input-dark" name="passwd" id="passwd" autocomplete="off" />
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-dark  btn-block text-left">
+							    <i class="fa-lock"></i>
+                                Log In
+						    </button>
+                        </div>
+
+                        <div class="login-footer">
+                            <a href="#">Forgot your password?</a>
+
+                            <div class="info-links" style="float: right">
+                                <a href="#">ToS</a> -
+                                <a href="#">Privacy Policy</a>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <style>
+     body {
+    margin: 0;            /* Reset default margin */
+}
+iframe {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 100vh;        /* Viewport-relative units */
+    width: 100vw;
+}
+ </style>
+   
+   <iframe src="finalslider.html" ></iframe>
+                
+    <!-- Page Content -->
+    <div id="pageContainer">
+        <div style="padding:20px"></div>
+        <div id='intelpolDemo'>
+            <h3>
+                An Open Vision <br></br>
+            </h3>
+            <h4>
+                Empowering our people, government and organisations to </br>
+                foster data driven innovation and transform ecosystems.
+            </h4>
+        </div>
+        <div id='ieapBtn'>
+                <button href = 'Contact.html' type="button" style='padding:20px 30px;outline:black' class="btn btn-lg btn-default">Contact</button>
+            </div>
+
+        <!--<hr class="featurette-divider">-->
+         <!-- <div style="padding:20px"></div>  -->
+       <!-- main content -->
+        <hr class="featurette-divider">
+            <div id='dataknowledgeaction'>
+                <div class="headline1">
+                    <div class="container"> 
+                            <div id= 'text1withoutborder'>
+                                <h3>
+                                    DATA. KNOWLEDGE. ACTION                              
+                                </h3>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+                <!-- Page Content -->
+    <div id="pageContainer">
+        <div style="padding:20px"></div>
+        <div id='intelpolDemo'>
+            <h3>
+                But What Is Open Data?  <br></br>
+            </h3>
+            <h4>
+                Simply put, open data is data that can be freely used,  </br>
+                re-used and redistributed by anyone.
+            </h4>
+        </div>
+        <div id='ieapBtn'>
+                <button href = 'Contact.html' type="button" style='padding:20px 30px;outline:black' class="btn btn-lg btn-default">Learn More</button>
+            </div>
+    <hr class="featurette-divider">
+            <div id='letsgetyouinvolved'>
+                <div class="headlineblack"> 
+                    <div class="container"> 
+                            <div id= 'text1blackwithoutborder'>
+                                <h3>
+                                    Let’s get you involved                              
+                                </h3>
+                            </div>
+                            <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id= 'INTELCHECK'></div>
+                            <div align= 'center'>
+                                <!-- <h4>INTELMACHINE </h4>                 -->
+                            </div>        
+                                <p align="center">
+                                Check out our </br>
+                                HOW TO -to getting </br>
+                                started with Open data </br>
+                                <p>                
+                            </div>
+                            
+                    <div class="col-md-3">
+                    <div id= 'INTELMACHINE'></div>
+                            <div align= 'center'>
+                                <h4>INTELMACHINE </h4>                
+                            </div>
+                            <p align="center">
+                                Deep Machine Learning and </br>
+                                AI Powered Predictions and </br>
+                                Recommendations
+                                <p>
+                    </div>
+                <div class="col-md-3">
+                    <div id= 'INTELCLOUD'></div>
+                            <div align= 'center'>
+                                <h4>INTELCLOUD </h4>                
+                            </div>
+                            <p align="center">
+                                Secure edge to Cloud </br>
+                                Data Engineering </br>
+                                and Management
+                                <p>
+                </div>
+                <div class="col-md-3">
+                        <div id= 'INTELEYE'></div>
+                            <div align= 'center'>
+                                <h4>INTELEYE </h4>                
+                                </div>
+                                    <p align="center">
+                                        Intelpol solution identifies </br>
+                                        crime hot spots with a high </br>
+                                        degree of accuracy
+                                    <p>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                <div id='ieapBtn'>
+                    <button href = 'IEAP.html' type="button" style='padding:20px 30px;outline:black' class="btn btn-lg btn-default">USE CASES</button>
+                </div>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+            <div id="pageContainer">
+                <div style="padding:20px"></div>
+                <div id='intelpolDemo'>
+                    <!-- <h3>
+                        But What Is Open Data?  <br></br>
+                    </h3> -->
+                    <h4>
+                        Open Data is an opportunity to engage Pakistanis in the </br>
+                        information that is produced and used by government and</br>
+                        organisations. We believe that Pakistan should benefit from</br>
+                        Open Data, and Open Data can benefit from every Pakistani</br> </br>
+                    </h4>
+
+             <div id='ieapBtn'>
+                    <button href = 'IEAP.html' type="button" style='padding:20px 30px;outline:black' class="btn btn-lg btn-default">About</button>
+                </div>
+                <div style="padding:20px"></div>
+
+            </div>
+    <hr class="featurette-divider">
+
+        <div class="container">
+            <div id='circleimage'>
+                <img src="assets/images/4.png">
+            </div> 
+            <div class="headlineblack"> 
+                <div class="container"> 
+                    <div id= 'text1blackwithoutborder'>
+                        <h3>
+                            Why Open ODP?                              
+                        </h3>
+                    <div id='text1blackwithoutborderleft'>
+                        <h4>
+                            o	ODP delivers all benefits of a an advanced SaaS (Software as Service)
+                                to help organisations and masses boost innovation. </br>
+                            o   Minimal yet end-to-end experience enables you to easily transform
+                                data into insights that you can share with the world.</br>
+                            o   Secure cloud based platform encourages organisations and
+                                government to drive transparency and collaboration.</br>
+                            o   With ODP get instant access data which you decide what to keep
+                                internal and what to make public.</br>
+                        </h4>
+                    </div>
+                </div>
+            </div>                        <div id='ieapBtn'>
+                <button href = "About.html" type="button" style='padding:20px 30px;outline: blue' class="btn btn-lg btn-default">ABOUT</button>
+            </div>
+        </div>
+    </div>
+    <hr class="featurette-divider">
+            <div id='fivepng'>
+                <div class="headlineblack"> 
+                    <div class="container"> 
+                            <div id= 'text1blackwithoutborder'>
+                                <h3>
+                                    Let’s get you involved                              
+                                </h3>
+                            </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id= 'ODPCHECK'></div>
+                            <div align= 'center'>
+                                <!-- <h4>INTELMACHINE </h4>                 -->
+                            </div>        
+                            <h3>
+                                COLLECT
+                                </h3>    
+                            <p align="center">
+                                Identify and organize data </br>
+                                quickly and easily with </br>
+                                ODP intuitive discovery </br>
+                                <p>                
+                            </div>
+                            
+                    <div class="col-md-3">
+                    <div id= 'ODPENHANCE'></div>
+                            <div align= 'center'>
+                                <h3> ENHANCE </h3>                
+                            </div>
+                            <p align="center">
+                                Transform data into visually </br>
+                                Appealing tables, charts </br>
+                                and maps
+                                <p>
+                    </div>
+                <div class="col-md-3">
+                    <div id= 'PUBLISH'></div>
+                            <div align= 'center'>
+                                <h3> PUBLISH </h3>                
+                            </div>
+                            <p align="center">
+                                Optimize data </br>
+                                publishing process with </br>
+                                ODP engine.
+                                <p>
+                </div>
+                <div class="col-md-3">
+                        <div id= 'SHARE'></div>
+                            <div align= 'center'>
+                                <h3> SHARE </h3>                
+                                </div>
+                                    <p align="center">
+                                        Enhanced stakeholder </br>
+                                        engagement through </br>
+                                        social media </br>
+                                    <p>
+                                </div>
+                            </div>
+                        </div>
+                        </br>
+                <div id='ieapBtn'>
+                    <button href = 'IEAP.html' type="button" style='padding:20px 30px;outline:black' class="btn btn-lg btn-default"> FEATURES </button>
+                </div>
+                        </div> 
+                    </div> 
+                </div>
+            </div>
+        <div class="container">
+            <div class="headlineblack"> 
+                <div class="container"> 
+                    <div id= 'text1blackwithoutborder'>
+                        <h4>
+                            It is not just about making data open. It is about genuine,
+                            ecosystem wide collaboration by providing citizens tools
+                            and know-how for a data informed society.                             
+                        </h4>
+                    </div>
+                </div>
+
+                <div id='ieapBtn'>
+                    <button href = 'IEAP.html' type="button" style='padding:20px 30px;outline:black' class="btn btn-lg btn-default"> GET IN TOUCH </button>
+                </div>
+                    
+            </div>           
+        </div>
+    </div>
+    </div>
+        <hr class="featurette-divider">
+
+            <div id='opendatafeatures'>
+                <div class="headline1">
+                     <div class="container"> 
+                            <div id= 'text1withoutborder'>
+                                <h3>
+                               OPEN DATA PORTAL FEATURES <br></br>
+                                </h3>
+                                <h4>
+                                Publish and share open data in less than 30 seconds
+                                </h4>
+                            </div>
+                     </div> 
+
+                </div>
+            </div>
+            <div id= 'specialtext'>
+                <h3>
+                    Powered by CKAN, Open Data Platform boasts many advanced features </br>
+                    designed intelligently to maximize user usability and experience.
+                </h3>
+        <div style="padding:20px"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                    <div id= 'INTELCHECK'></div>
+                        <div align= 'center'>
+                                <!-- <h4>INTELMACHINE </h4>                 -->
+                            </div>        
+                            <h3>
+                                User Experience Focused
+                                </h3>    
+                            <p align="center">
+                                
+                                An intuitive web interface allows </br>
+                                publishers and curators to easily </br>
+                                register, update and refine datasets.
+                                <p>                
+                            </div>
+                            
+                    <div class="col-md-6">
+                            <div align= 'center'>
+                                <h3> Leverage powerful Api’s </h3>                
+                            </div>
+                            <p align="center">
+                                Don’t just search for a dataset, query within </br>
+                                your data! ODP Apis even allow users to </br>
+                                process data from IoT sources in real time. </br>
+                            <p>
+                    </div>
+                </div> 
+            </div> 
+        </div>        
+
+        <div style="padding:20px"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                        <div align= 'center'>                                    
+                            <h3>
+                                Voice AI Bot
+                                </h3>    
+                            <p align="center">
+                                
+                                Intelligence enabled guided </br>
+                                experience for user </br>
+                                convenience </br>
+                                <p>                
+                        </div>
+                </div>
+                            
+                    <div class="col-md-6">
+                            <div align= 'center'>
+                                <h3> Sensor Data </h3>                
+                            </div>
+                            <p align="center">
+                                Open data portal provides the </br>
+                                feasibility to upload real time </br>
+                                data with its web API. </br>
+                            <p>
+                            
+
+                    </div> 
+            </div> 
+        </div>
+
+
+
+<div style="padding:20px"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                        <div align= 'center'>                                    
+                            <h3>
+                                Theme IT
+                                </h3>    
+                            <p align="center">
+                                
+                               Customizable appearance </br>
+                                of ODP buy following the </br>
+                                theming guide. </br>
+                                <p>                
+                        </div>
+                </div>
+                            
+                    <div class="col-md-6">
+                            <div align= 'center'>
+                                <h3> Take full control </h3>                
+                            </div>
+                            <p align="center">
+                                 Fully open-source, allowing you to </br>
+                                build your own custom dashboards </br>
+                                to make your data speak </br>
+                            <p>
+                    </div> 
+            </div> 
+
+
+<div style="padding:20px"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                        <div align= 'center'>                                    
+                            <h3>
+                                Data Discovery
+                                </h3>    
+                            <p align="center">
+                                
+                               Keyword search as well as </br>
+                                faceting by tags and browsing </br>
+                                between related datasets </br>
+                                <p>                
+                        </div>
+                </div>
+                            
+                    <div class="col-md-6">
+                            <div align= 'center'>
+                                <h3> Metadata </h3>                
+                            </div>
+                            <p align="center">
+                                 Open Data portal provides </br>
+                                a rich set of metadata for </br>
+                                each dataset </br>
+                            <p>
+                            
+
+                    </div> 
+            </div> 
+
+            <div style="padding:20px"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6">
+                            <div align= 'center'>
+                                <!-- <h4>INTELMACHINE </h4>                 -->
+                                    
+                            <h3>
+                                Geospatial
+                                </h3>  
+                            </div>  
+                            <p align="center">
+                                
+                                CKAN has advanced geospatial </br>
+                                features, covering data preview, </br>
+                                search, and discovery </br>
+                                <p>                
+                            </div>
+                            
+                    <div class="col-md-6">
+                            <div align= 'center'>
+                                <h3> Visualization </h3>                
+                            </div>
+                            <p align="center">
+                                previewing data stored in the Data Store </br>
+                                in form of powerful visualizations to </br>
+                                easily extract insights. </br>
+                            <p>
+                    </div>
+                </div> 
+            </div> 
+        </div>
+    </div>
+    <hr class="featurette-divider">
+               <!-- Footer -->
+
+    </div>
+    <!-- /.container -->
+    <footer>
+        <div class="nav navbar-nav">
+            <a class="btn btn-social-icon btn-facebook" href="http://www.facebook.com"><i class="fa fa-facebook fa-2x"></i></a>
+            <a class="btn btn-social-icon btn-linkedin" href="https://www.linkedin.com/company-beta/13308401/"><i class="fa fa-linkedin fa-2x"></i></a>
+            <a class="btn btn-social-icon btn-twitter" href="http://twitter.com/"><i class="fa fa-twitter fa-2x"></i></a>
+            <a class="btn btn-social-icon btn-youtube" href="http://youtube.com/"><i class="fa fa-youtube fa-2x"></i></a>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>&copy; 2017 All Rights Reserved. Data Intelligence Hub</p>
+            </div>
+        </div>
+    </footer>
+    <!-- jQuery -->
+    <script src="assets/js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>ODP - Welcome to Open Data Platform Pakistan</title>
+    <link rel="shortcut icon" href='{% static "images/odp/odp_favicon.png" %}'>
+
+    <link href='{% static "css/bootstrap.css" %}' rel="stylesheet">
+
+    <link href='{% static "css/heroic-features.css" %}' rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href='{% static "css/style.css" %}'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body style="padding-top: 65px;">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="homepage-header">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <p></p>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav login-form">
+                        <li class="upper-login">
+                            <input type="text" name="username" placeholder="Username" class="loginform-field">
+                        </li>
+                        <li class="upper-login">
+                            <input type="password" name="password" placeholder="Password" class="loginform-field">
+                        </li>
+                        <li class="upper-login">
+                            <button class="loginform-field button"><strong>Login</strong></button>
+                        </li>
+                </ul>
+                <div class="error"></div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="row" id="page-cover">
+        <div class="container">
+            <span class="cover-part">
+                <img src='{% static "images/odp/odp_logo.png" %}' class="img-responsive cover-logo">
+            </span>
+            <span class="cover-part">
+                <img src='{% static "images/odp/cover_line.png" %}' class="img-responsive cover-line">
+            </span>
+            <span class="cover-info">
+            <br>
+                <span class="cover-intro">Creating social and economic value through Open Data</span><br>
+                <span class="cover-intro">We connect, equip and inspire people, industries, government and not for profit organization to innovate with open data</span>
+                <br>
+            </span>
+        </div>
+    </div>
+    <div style="height: 65px;"></div>
+    <div class="container">
+
+        <div class="row" style="padding-bottom: 30px;">
+            <div class="col-sm-offset-1 col-sm-4 pull-left">
+                <p style="padding-bottom: 5px;"><img class="odp-feat" src='{% static "images/odp/od1.png" %}'></p>
+                <p class="odpfeat-head">STORE AND MANAGE DATA </p>
+                <p style="font-size: 14px;">Store the raw data and metadata. Visualize structured data with interactive tables, graphs and maps. Get statistics and usage metrics for your datasets. Search geospatial data on a map by area.</p>
+            </div>
+            <div class="col-sm-offset-2 col-sm-4 pull-left">
+                <p style="padding-bottom: 5px;"><img class="odp-feat" style="width: 75px;" src='{% static "images/odp/od2.png" %}'></p>
+                <p class="odpfeat-head">PUBLISH AND FIND DATASETS </p>
+                <p style="font-size: 14px;">Publish datasets via import or through a web interface. Search by keyword or filter by tags. See dataset information at a glance. Full change history lets you easily undo changes or view old versions.</p>
+            </div>
+        </div>
+
+        <div class="row" style="padding-bottom: 30px;">
+            <div class="col-sm-offset-1 col-sm-4 pull-left">
+                <p style="padding-bottom: 5px;"><img class="odp-feat" style="width: 130px;" src='{% static "images/odp/od3.png" %}'></p>
+                <p class="odpfeat-head">ENGAGING WITH THE USERS AND ECOSYSTEM AT LARGE </p>
+                <p style="font-size: 14px;">Use Open Data Portal Pakistan to collect data from multiple sources, break data silos, share interactive data visualizations, foster social applicative development through APIs and collaborate with their key public sector organizations.</p>
+            </div>
+            <div class="col-sm-offset-2 col-sm-4 pull-left">
+                <p style="padding-bottom: 5px;"><img class="odp-feat" style="width: 76px;height: 55px;" src='{% static "images/odp/od4.png" %}'></p>
+                <p class="odpfeat-head">CUSTOMIZE AND EXTEND</p>
+                <p style="font-size: 14px;">Use the API‘s rich programming interface, and benefit from over 60 extensions including link checking, comments, and analytics. Easy to use Restful APIs allow secure and fast data communication between applications, with rich quering. </p>
+            </div>
+        </div>
+
+        <div class="row page-info">
+            <div class="col-sm-offset-2 col-sm-6" style="padding-top: 29px;">
+                <span style="font-size: 15px;">Collaborate with the national open government community to create greater transparency and accountability, increase citizen engagement, and drive innovation and economic opportunities through open data, open information, and open dialogue.</span>
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <img class="img-responsive landing-img" src='{% static "images/odp/intro1.png" %}'></img>
+            </div>
+        </div>
+
+        <div class="row page-info">
+            <div class="col-sm-2 col-sm-offset-2 text-center">
+                <img class="img-responsive landing-img" src='{% static "images/odp/intro2.png" %}'></img>
+            </div>
+
+            <div class="col-sm-6" style="padding-top: 0px; text-align: left;">
+                <!--<span class="feature-head">Platform Features</span><br>--><br>
+                <span style="font-size: 15px;">Open Data’s true power can only be harnessed when it is accessible to all, regardless of technical expertise. In making data easy to publish and understand, communities can become collaborative ecosystems and are empowered to co-create ways to better their quality of life.</span>
+            </div>
+        </div>
+
+        <div class="row page-info">
+            <div class="col-sm-offset-2 col-sm-6" style="padding-top: 0px;">
+                <!--<span class="feature-head">Untapped Potential</span>--><br><br>
+                <span style="font-size: 15px;">ODP version 1.0 let’s users upload a data set in less than a minute, browse data by categories, regions  and share it with the rest of the world. Next prototype features include sourcing API data and request data of various public and private organisations.</span>
+            </div>
+
+            <div class="col-sm-4 text-center">
+                <img class="img-responsive landing-img" src='{% static "images/odp/intro3.png" %}'></img>
+            </div>
+        </div>
+
+        <hr>
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <span>&copy; 2017 Persontyle Group Limited - All Rights Reserved.</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src='{% static "js/jquery.js" %}'></script>
+    <script src='{% static "js/bootstrap.min.js" %}'></script>
+    <script type="text/javascript">
+
+        $(document).ready(function ()
+        {
+            $(document).on('click', '.button', function (e){
+                do_login(e);
+            });
+
+            $('.loginform-field').on('keypress', function (e)
+            {
+                if (e.which === 13)
+                    do_login(e);
+            });
+        });
+
+        function do_login(e)
+        {
+            e.preventDefault();
+            var username = $('input[name=username]').val();
+            var password = $('input[name=password]').val();
+
+            if (username == 'admin' && password == 'admin')
+            {
+                window.location.href = "{% url 'dashboard' %}";
+            }
+            else
+            {
+                $('.error').html('<p style="color: red;">Invalid username and password.</p>');
+            }
+        }
+    </script>
+</body>
+
+</html>

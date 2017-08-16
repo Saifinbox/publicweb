@@ -1,0 +1,279 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block main_content %}
+<style>
+   #map {
+    height: 400px;
+    width: 100%;
+   }
+   #sample-map-widget {
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+   }
+   .xe-widget {
+    height: 287px;
+   }
+</style>
+<div class="dx-warning category-div">
+    <div>
+        <h2>Browse Open Data by Categories</h2>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/energy.jpg" %}'>
+                    <span class="category-name"><a href='{% url "energy" %}'>Energy</a></span>
+                </div>
+                <br>
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/transport.jpg" %}'>
+                    <span class="category-name"><a href='{% url "transport" %}'>Transport</a></span>
+                </div>
+                <br>
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/economy.jpg" %}'>
+                    <span class="category-name"><a href="">Economy & Finance</a></span>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-sm-4">
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/environment.jpg" %}'>
+                    <span class="category-name"><a href='{% url "env" %}'>Environment</a></span>
+                </div>
+                <br>
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/region.jpg" %}'>
+                    <span class="category-name"><a href="">Regions and Cities</a></span>
+                </div>
+                <br>
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/population.jpg" %}'>
+                    <span class="category-name"><a href="">Population & Society</a></span>
+                </div>
+                <br>
+            </div>
+
+            <div class="col-sm-4">
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/agriculture.jpg" %}'>
+                    <span class="category-name"><a href='{% url "agriculture" %}'>Agriculter</a></span>
+                </div>
+                <br>
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/education.jpg" %}'>
+                    <span class="category-name"><a href="">Education & Sport</a></span>
+                </div>
+                <br>
+                <div>
+                    <img class="img-inline" src='{% static "images/odp/justice.jpg" %}'>
+                    <span class="category-name"><a href="">Justice & Legal</a></span>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-8">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="font-size:24px">Top Open Data Contributions</h3>
+            </div>
+            <div class="panel-body">
+                <div id="bar-3" style="height: 400px; width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title" style="font-size:24px">Community Updates</h3>
+            </div>
+            <div class="panel-body">
+                <div id="" style="height: 400px; width: 100%; overflow-y:scroll;">
+                    <div>
+                        <a href=""><u>K-Electric published new dataset</u></a>
+                        <p>Consumer 2013</p>
+                        <p>List of featutres icludes consumer location, energy consumption...</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <a href=""><u>Engro accepted your data request</u></a>
+                        <p>Industry Logistics 2009</p>
+                        <p>Engro accepted your request for data. You will be notified when...</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <a href=""><u>Jhon Snow is now following you</u></a>
+                        <p>Activity Stream</p>
+                        <p>User Jhon Snow is now following you. User will automatically be notified with your activity...</p>
+                    </div>
+                    <hr>
+                    <div>
+                        <a href=""><u>Engro accepted your data request</u></a>
+                        <p>Industry Logistics 2009</p>
+                        <p>Engro accepted your request for data. You will be notified when...</p>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="background: white;padding: 15px;font-size: 24px;"><span>Open Data on Map</span></div>
+<div class="xe-widget xe-map-stats">
+    <div class="xe-map">
+        <div id="sample-map-widget"></div>
+    </div>
+
+    <div class="xe-details">
+        <div class="xe-label">
+            <h3>Top Open Data Contributions</h3>
+        </div>
+
+        <ul class="list-unstyled">
+            <li>
+                <div class="xe-map-data">
+                    <span class="label label-secondary">5k</span>
+                    <span class="xe-label">Lahore</span>
+                </div>
+            </li>
+            <li>
+                <div class="xe-map-data">
+                    <span class="label label-purple">2k</span>
+                    <span class="xe-label">Karachi</span>
+                </div>
+            </li>
+            <li>
+                <div class="xe-map-data">
+                    <span class="label label-yellow">311</span>
+                    <span class="xe-label">Heyderbad</span>
+                </div>
+            </li>
+            <li>
+                <div class="xe-map-data">
+                    <span class="label label-red">892</span>
+                    <span class="xe-label">Islamabad</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<br><br>
+<script>
+  function initMap() {
+    var uluru = {lat: 29, lng: 69.1};
+    var map = new google.maps.Map(document.getElementById('sample-map-widget'), {
+      zoom: 5,
+      center: uluru
+    });
+    var labels = ['Lahore', 'Islamabad', 'Karachi', 'Heyderbad'];
+
+    var markers = locations.map(function(location, i) {
+        return new google.maps.Marker({
+          position: location,
+          // label: labels[i]
+        });
+    });
+    var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+  }
+
+  var locations = [
+    {lat: 31.5546, lng: 74.3572},
+    {lat: 33.7294, lng: 73.0931},
+    {lat: 24.8615, lng: 67.0099},
+    {lat: 25.3818, lng: 68.3694},
+    {lat: 31.4187, lng: 73.0791},
+    {lat: 30.1984, lng: 71.4687},
+    {lat: 28.4212, lng: 70.2989},
+
+  ]
+</script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+<script type="text/javascript" src='{% static "js/globalize.min.js" %}'></script>
+<script type="text/javascript" src='{% static "js/dx_chartjs.js" %}'></script>
+<script type="text/javascript">
+
+    var i = 0;
+    var points = ["2011", "2012", "2013", "2014", "2015"];
+    var dataSource = [
+
+        { year: 2010, lahore: 54, islamabad: 1335, karachi: 904 },
+        { year: 2011, lahore: 546, islamabad: 1205, karachi: 1101 },
+        { year: 2012, lahore: 705, islamabad: 417, karachi: 283 },
+        { year: 2013, lahore: 856, islamabad: 513, karachi: 361 },
+        { year: 2014, lahore: 1294, islamabad: 614, karachi: 471 },
+        { year: 2015, lahore: 321, islamabad: 721, karachi: 623 },
+        { year: 2016, lahore: 120, islamabad: 95, karachi: 84 },
+        { year: 2017, lahore: 62, islamabad: 390, karachi: 190 },
+
+    ];
+
+    $("#bar-3").dxChart({
+        dataSource: dataSource,
+        commonSeriesSettings: {
+            argumentField: "year"
+        },
+        series: [
+            { valueField: "lahore", name: "Lahore", color: "#40bbea" },
+            { valueField: "islamabad", name: "Islamabad", color: "#cc3f44" },
+            { valueField: "karachi", name: "Karachi", color: "#8dc63f" }
+        ],
+        argumentAxis:{
+            grid:{
+                visible: false
+            },
+            label: {
+                visible: true
+            }
+        },
+        valueAxis: [{
+            grid: {
+                visible: true
+            }
+        }, {
+            name: "total",
+            position: "left",
+            grid: {
+                visible: true
+            },
+            title: {
+                text: "Datasets count"
+            },
+            label: {
+                format: "largeNumber"
+            }
+        }],
+        tooltip:{
+            enabled: true
+        },
+        legend: {
+            verticalAlignment: "top",
+            horizontalAlignment: "right"
+        },
+        commonPaneSettings: {
+            border:{
+                visible: true,
+                right: false
+            }
+        }
+    });
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDN0tyF5WjaK29yuxXNjgIw8V4_BftPExw&callback=initMap"
+type="text/javascript"></script>
+{% endblock main_content %}
+
+
+
+
+

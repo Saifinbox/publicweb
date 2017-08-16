@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block main_content %}
+
+<section class="category-div">
+    <div class="row">
+        <div>
+            <ul class="nav nav-tabs right-aligned">
+                <li class="active">
+                    <a href="#data" data-toggle="tab" aria-expanded="true">
+                        <i class="fa-cubes"></i>&nbsp;&nbsp;<span>Data</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="#activity" data-toggle="tab" aria-expanded="">
+                        <i class="fa-dot-circle-o"></i>&nbsp;&nbsp;<span>Activity Stream</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content col-sm-12">
+                <div class="col-sm-3"  style="border-right: 1px solid #c5f2ba;">
+                    <section class="module-content">
+                        <div class="image">
+                            <a href="">
+                                <img src='{% static "images/user-4.png" %}' width="70">
+                            </a>
+                        </div>
+                        <h1 class="heading">Energy</h1>
+                        <div class="nums">
+                            <dl>
+                              <dt>Followers</dt>
+                              <dd><span>1</span></dd>
+                            </dl>
+                            <dl>
+                              <dt>Datasets</dt>
+                              <dd><span title="13,238">3</span></dd>
+                            </dl>
+                        </div>
+
+                        <div class="follow_button">
+                            <a class="btn btn-success" style="font-weight:bold;" href="#"><i class="fa-plus-square-o"></i>&nbsp;&nbsp;Follow</a>
+                        </div>
+                    </section>
+                </div>
+
+                    <div class="tab-pane active col-sm-8" id="data"  style="border-left: 1px solid #c5f2ba;">
+                        <span style="font-size: 25px; font-weight: bold">3 datasets found</span>
+                        <span style="float: right;display: inline-flex;idth: 200px;" class="form-group">
+                            <label style="width: 60%;padding-top: 8px;"><strong>Order by</strong></label> &nbsp;&nbsp;
+                            <select name="order" class="form-control">
+                                <option>Ascending</option>
+                                <option>Decending</option>
+                                <option>Date</option>
+                            </select>
+                        </span>
+                        <hr>
+                        <br>
+                        <div>
+                            <h4 class="data-name"><a href='{% url "kelec" %}'>K-Electric consumer data 2012</a></h4>
+                            <p>Consumer data from 2012. Contains information about energy, location, consumer number, consumer appliances, units used, family member...</p>
+                            <span class="badge badge-red pull-left">csv</span>
+                            <span class="badge badge-green pull-left">xml</span>
+                            <span class="badge badge-blue pull-left">API</span>
+                            <span class="label label-default pull-right">k-electric | May 22, 2014</span>
+
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+
+                        <div>
+                            <h4 class="data-name"><a href="#">LESCO energy 2104</a></h4>
+                            <p>Energy produced and distributed by LESCO in 2014. Contains location of power grids, transformer counts, energy in watts, down time...</p>
+                            <span class="badge badge-red pull-left">csv</span>
+                            <span class="badge badge-green pull-left">xml</span>
+                            <span class="badge badge-blue pull-left">API</span>
+                            <span class="label label-default pull-right">LESCO | June 13, 2015</span>
+
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div>
+                            <h4 class="data-name"><a href="#">HESC 2009</a></h4>
+                            <p>Hyderabad Electric Supply Company consumer data from 2009. Contains consumer number, energy in watts, bill charged, location, grid location...</p>
+                            <span class="badge badge-red pull-left">csv</span>
+                            <span class="badge badge-green pull-left">xml</span>
+                            <span class="badge badge-blue pull-left">API</span>
+                            <span class="label label-default pull-right">HESC | Dec 04, 2010</span>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                    </div>
+                    <div class="tab-pane col-sm-8" id="activity">
+                        <h2>Genius working on it</h2>
+                        <p>Coming Soon...</p>
+                    </div>
+                    <!-- <div class="col-sm-8" style="border-left: 1px solid #c5f2ba;"> </div>-->
+
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock main_content %}
